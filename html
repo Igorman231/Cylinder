@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>cylinder</title>
+   
+    <style>
+        body, canvas{
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+     }     
+   </style>
+  </head>
+  <body>
+  <canvas id = 'render-canvas'> </canvas>
+ <script src="https://preview.babylonjs.com/babylon.js"></script>
+  
+<script>
+   
+   let canvas = window.document.querySelector('#render-canvas'); 
+    let engine = new BABYLON.Engine(canvas)
+    let scene = new BABYLON.Scene(engine);
+    scene.clearColor = new BABYLON.Color3(1, 1, 1);    
+    
+    let camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0,0,-10),scene);
+    camera.attachControl(canvas, true);
+    const rot = camera.rotation.clone();
+    let light = new BABYLON.PointLight('light', new BABYLON.Vector3(10,10,0),scene);
+   
+    //цилиндр
+  const cylinder = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 5, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder.position.x = -2;
+
+  
+  // цвет цилиндра красный
+  const redMaterial = new BABYLON.StandardMaterial("red", scene);
+  redMaterial.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder.material = redMaterial;
+  cylinder.rotation.x = Math.PI * 0.1;
+    
+  const cylinder2 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: -1, diameterTop: 3, diameterBottom: 1}, scene);
+  cylinder2.position.x = 3;
+  
+  // цвет цилиндра красный
+  const redMaterial2 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial2.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder2.material = redMaterial2;
+  cylinder2.rotation.x = Math.PI * 0.5;
+
+  const cylinder3 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 10, diameterTop: 1, diameterBottom: 1}, scene);
+  cylinder3.position.x = 6;
+  
+  // цвет цилиндра красный
+  const redMaterial3 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial3.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder3.material = redMaterial3;
+  cylinder3.rotation.x = Math.PI * 0.1;
+
+  const cylinder4 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: -3, diameterTop: 6, diameterBottom: 5}, scene);
+  cylinder4.position.x = 11;
+  cylinder4.rotation.x = Math.PI * 0.5;
+
+  
+  // цвет цилиндра красный
+  const redMaterial4 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial4.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder4.material = redMaterial4;
+
+  const cylinder5 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 5, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder5.position.x = 6;
+  cylinder5.position.x = -6;
+
+  
+  // цвет цилиндра красный
+  const redMaterial5 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial5.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder5.material = redMaterial5;
+  cylinder5.rotation.x = Math.PI * 1;
+
+  const cylinder7 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 5, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder7.position.x = 17;
+
+  
+  // цвет цилиндра красный
+  const redMaterial7 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial7.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder7.material = redMaterial7;
+  cylinder7.rotation.x = Math.PI * 0.1;
+
+  const cylinder8 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 20, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder8.position.x = 20.5;
+
+  
+  // цвет цилиндра красный
+  const redMaterial8 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial8.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder8.material = redMaterial8;
+  
+  const cylinder9 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: -1, diameterTop: 2, diameterBottom: 1}, scene);
+  cylinder9.position.x = 5;
+  cylinder9.position.y = -5;
+  cylinder9.position.z = -1;
+
+  
+  // цвет цилиндра красный
+  const redMaterial9 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial9.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder9.material = redMaterial9;
+  cylinder9.rotation.x = Math.PI * 1;
+
+  const cylinder10 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: -1, diameterTop: 2, diameterBottom: 1}, scene);
+  cylinder10.position.x = 7;
+  cylinder10.position.y = -5;
+  cylinder10.position.z = -1;
+
+  
+  // цвет цилиндра красный
+  const redMaterial10 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial10.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder10.material = redMaterial10;
+  cylinder10.rotation.x = Math.PI * 1;
+
+  const cylinder11 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 5, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder11.position.x = 6;
+  cylinder11.position.y = -10;
+
+  
+  // цвет цилиндра красный
+  const redMaterial11 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial11.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder11.material = redMaterial11;
+  cylinder11.rotation.x = 1.578;
+  cylinder11.rotation.y = 1.6;
+
+  const cylinder12 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 5, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder12.position.x = 10.8;
+  cylinder12.position.y = -8;
+
+  
+  // цвет цилиндра красный
+  const redMaterial12 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial12.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder12.material = redMaterial12;
+  cylinder12.rotation.x = 1;
+  cylinder12.rotation.y = 1.6;
+
+  const cylinder13 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 5, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder13.position.x = 1.5;
+  cylinder13.position.y = -8;
+
+  
+  // цвет цилиндра красный
+  const redMaterial13 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial13.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder13.material = redMaterial13;
+  cylinder13.rotation.x = -1;
+  cylinder13.rotation.y = 1.6;
+
+  
+  const cylinder6 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 5, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder6.position.x = 19;
+  cylinder6.position.y = -11;
+
+  
+  // цвет цилиндра красный
+  const redMaterial6 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial6.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder6.material = redMaterial6;
+  cylinder6.rotation.x =1;
+  cylinder6.rotation.y =1.6;
+
+  const cylinder14 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 5, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder14.position.x = 15;
+  cylinder14.position.y = -13.5;
+
+  
+  // цвет цилиндра красный
+  const redMaterial14 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial14.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder14.material = redMaterial14;
+  cylinder14.rotation.x =1;
+  cylinder14.rotation.y =1.6;
+
+const cylinder15 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 20, diameterTop: 2, diameterBottom: 2}, scene);
+cylinder15.position.x = -5.9;
+
+
+
+// цвет цилиндра красный
+const redMaterial15 = new BABYLON.StandardMaterial("red", scene);
+redMaterial15.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+cylinder15.material = redMaterial15;
+
+
+
+const cylinder16 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 5, diameterTop: 2, diameterBottom: 2}, scene);
+cylinder16.position.x = -4;
+cylinder16.position.y = -11;
+
+
+// цвет цилиндра красный
+const redMaterial16 = new BABYLON.StandardMaterial("red", scene);
+redMaterial16.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+cylinder16.material = redMaterial16;
+cylinder16.rotation.x =-1;
+cylinder16.rotation.y =1.6;
+
+const cylinder17 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 5, diameterTop: 2, diameterBottom: 2}, scene);
+cylinder17.position.x = -0;
+cylinder17.position.y = -13.6;
+
+
+// цвет цилиндра красный
+const redMaterial17 = new BABYLON.StandardMaterial("red", scene);
+redMaterial17.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+cylinder17.material = redMaterial17;
+cylinder17.rotation.x =-1;
+cylinder17.rotation.y =1.6;
+
+const cylinder18 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 10, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder18.position.x = 7.5;
+  cylinder18.position.y = -15;
+
+  
+  // цвет цилиндра красный
+  const redMaterial18 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial18.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder18.material = redMaterial18;
+  cylinder18.rotation.x = 1.578;
+  cylinder18.rotation.y = 1.6;
+
+
+  const cylinder19 = BABYLON.MeshBuilder.CreateCylinder("cylinder", { height: 25, diameterTop: 2, diameterBottom: 2}, scene);
+  cylinder19.position.x = 7.5;
+  cylinder19.position.y = 9;
+
+  
+  // цвет цилиндра красный
+  const redMaterial19 = new BABYLON.StandardMaterial("red", scene);
+  redMaterial19.diffuseColor = new BABYLON.Color3(1, 0, 0); 
+  cylinder19.material = redMaterial19;
+  cylinder19.rotation.x = 1.578;
+  cylinder19.rotation.y = 1.6;
+
+
+    engine.runRenderLoop(()=>{
+        scene.render();
+        
+    })
+    
+</script>
+</body>
+</html>
+
+
+ 
